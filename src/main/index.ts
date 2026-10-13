@@ -6,7 +6,21 @@ import { getApiKey, hasApiKey, setApiKey } from './apiKey'
 
 let mainWindow: BrowserWindow | null = null
 
-const LANGUAGES = ['English', 'German', 'Spanish', 'French']
+const LANGUAGES = [
+  'English',
+  'German',
+  'French',
+  'Italian',
+  'Spanish',
+  'Polish',
+  'Swedish',
+  'Danish',
+  'Irish',
+  'Arabic',
+  'Chinese (Simplified)',
+  'Japanese',
+  'Korean'
+]
 
 async function translate(text: string, language: string): Promise<string> {
   const apiKey = getApiKey()
@@ -20,7 +34,7 @@ async function translate(text: string, language: string): Promise<string> {
     messages: [
       {
         role: 'user',
-        content: `Translate the following text to ${language}. Return ONLY the translation, no explanations.\n\n${text}`
+        content: `Translate the following text to ${language}. Use natural, idiomatic phrasing as a native speaker would. Return ONLY the translation, no explanations.\n\n${text}`
       }
     ]
   })

@@ -1,6 +1,20 @@
 import { useEffect, useState } from 'react'
 
-const LANGUAGES = ['English', 'German', 'Spanish', 'French']
+const LANGUAGES = [
+  'English',
+  'German',
+  'French',
+  'Italian',
+  'Spanish',
+  'Polish',
+  'Swedish',
+  'Danish',
+  'Irish',
+  'Arabic',
+  'Chinese (Simplified)',
+  'Japanese',
+  'Korean'
+]
 
 function App(): React.JSX.Element {
   const [text, setText] = useState('')
@@ -107,7 +121,7 @@ function App(): React.JSX.Element {
               {loading ? 'Translating…' : 'Translate'}
             </button>
           </div>
-          <div className={`result${error ? ' error' : ''}`}>
+          <div dir="auto" className={`result${error ? ' error' : ''}`}>
             {error || output || <span className="placeholder">Translation appears here</span>}
           </div>
         </>
