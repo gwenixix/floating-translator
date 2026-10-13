@@ -1,0 +1,167 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  color: #eee;
+  user-select: none;
+}
+
+.panel {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: rgba(30, 32, 40, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Dragging the title bar moves the frameless window */
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px 6px 12px;
+  -webkit-app-region: drag;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.controls {
+  display: flex;
+  gap: 2px;
+  -webkit-app-region: no-drag;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  color: inherit;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.controls button:hover,
+.controls button.on {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+textarea {
+  flex: 0 0 90px;
+  margin: 0 10px;
+  padding: 8px;
+  resize: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font:
+    14px system-ui,
+    sans-serif;
+  outline: none;
+  user-select: text;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  margin: 8px 10px 0;
+}
+
+select,
+.primary {
+  font:
+    13px system-ui,
+    sans-serif;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 7px 10px;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+select option {
+  background: #1e2028;
+}
+
+.primary {
+  flex: 1;
+  cursor: pointer;
+  background: #5b6cff;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.primary:hover:not(:disabled) {
+  background: #7080ff;
+}
+
+.primary:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.result {
+  flex: 1;
+  margin: 8px 10px 10px;
+  padding: 8px;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  user-select: text;
+}
+
+.result.error {
+  color: #ff8a8a;
+}
+
+.placeholder {
+  opacity: 0.4;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+.settings input {
+  font:
+    13px system-ui,
+    sans-serif;
+  padding: 8px;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  outline: none;
+  user-select: text;
+}
+
+.settings .hint {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.55;
+}
+
+.settings .primary {
+  flex: none;
+}
