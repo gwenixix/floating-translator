@@ -1,10 +1,10 @@
 {
   "name": "floating-translator",
   "version": "1.1.0",
-  "description": "An Electron application with React and TypeScript",
+  "description": "Floating translator powered by Claude",
   "main": "./out/main/index.js",
-  "author": "example.com",
-  "homepage": "https://electron-vite.org",
+  "author": "zyrcon.co",
+  "homepage": "https://zyrcon.co",
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint --cache .",
